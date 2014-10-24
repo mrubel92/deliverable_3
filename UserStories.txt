@@ -1,0 +1,41 @@
+As a user
+I want a string add function
+So that I can see what 2 concatenated strings look like
+
+When I enter a string
+And I choose the add function
+And I enter a second string
+Then I should see the second string concatenated to the end of the first string.
+
+When I enter a string
+And I choose the add function
+And I hit enter without typing a second string
+Then I should see just the first string.
+
+
+As a user
+I want a string remove function
+So that I can see what a string can look like without its last n characters
+
+Given I enter a string of greater than 3 characters
+When I enter the string
+And I choose the remove characters function
+And I specify I want 3 characters removed
+Then I should see the string with the last 3 characters removed
+
+Given I enter a string of exactly 3 characters
+When I entere the string
+And I choose the remove characters function
+And I specify I want 3 characters removed
+Then I should see no characters
+
+
+As a user
+I want the string remove function to error out when I attempt to remove more characters than there are in the string
+So that I know I cannot remove that many characters from the world
+
+Given I enter a string of length 3
+When I enter the string
+And I choose the remove character function
+And I specify I want 3 characters removed
+Then I should see an error alerting me I can't remove that many characters
