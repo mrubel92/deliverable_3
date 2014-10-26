@@ -1,41 +1,96 @@
+Feature:
 As a user
 I want a string add function
 So that I can see what 2 concatenated strings look like
 
+Scenario: concatinate 2 strings
 When I enter a string
 And I choose the add function
 And I enter a second string
 Then I should see the second string concatenated to the end of the first string.
 
+Scenario: Only type in the first string
 When I enter a string
 And I choose the add function
 And I hit enter without typing a second string
 Then I should see just the first string.
 
+Scenario: Only type in second string
+When I enter an empty string
+And I choose the add function
+And I enter a second string
+Then I should see just the second string
 
+Scenario: Type in 2 empty strings
+When I enter an empty string
+And I choose the add fuction 
+And I hit enter without typing a second string 
+Then I should see an empty string
+
+Feature:
 As a user
 I want a string remove function
 So that I can see what a string can look like without its last n characters
 
+Scenario: Remove the last 3 characters
 Given I enter a string of greater than 3 characters
 When I enter the string
 And I choose the remove characters function
 And I specify I want 3 characters removed
 Then I should see the string with the last 3 characters removed
 
+Scenario: Remove all the characters
 Given I enter a string of exactly 3 characters
-When I entere the string
+When I enter the string
 And I choose the remove characters function
 And I specify I want 3 characters removed
 Then I should see no characters
 
+Scenario: Remove no characters
+When I enter the string
+And I choose the remove characters function
+And I specify I want 0 characters removed
+Then I should see the original string
 
+
+Feature:
 As a user
 I want the string remove function to error out when I attempt to remove more characters than there are in the string
 So that I know I cannot remove that many characters from the world
 
-Given I enter a string of length 3
-When I enter the string
+Scenario: Remove more characters than the length of string
+When I enter a string of length 3
 And I choose the remove character function
-And I specify I want 3 characters removed
+And I specify I want 4 characters removed
 Then I should see an error alerting me I can't remove that many characters
+
+Feature:
+As a user
+I want to use the reverse string function
+So that I can see what my string looks like backward
+
+Scenario: Enter a string of all one case
+When I enter the string "HELLO"
+And I choose the reverse function
+Then I should see the string "OLLEH"
+
+Scenario: Enter a string of more than one case
+When I enter the string "World"
+And I choose the reverse function
+Then I should see the string "dlroW"
+
+Scenario: Enter a palindrome
+When I enter the string that is a palendrome
+And the string is all uppercase or lowercase
+And I choose the reverse function
+Then I should see the original string
+
+Scenario: Enter an empty string
+When I enter an empty string
+And I choose the reverse function
+Then I should see the empty string
+
+Scenario: Enter a string of length 1
+When I enter a string of length 1
+And I choose the reverse funtion
+Then I should see the original string
