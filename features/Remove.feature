@@ -22,3 +22,8 @@ Scenario: Remove too many characters
 Given the object's string is "Hello"
 When I remove 6 characters
 Then "ERROR" should be the new object string
+
+Scenario: Remove negative number
+Given the object's string is "Hello"
+When I remove -4 characters
+Then "ERROR" should be the new object string
