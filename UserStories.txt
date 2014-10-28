@@ -79,11 +79,16 @@ When I enter the string "World"
 And I choose the reverse function
 Then I should see the string "dlroW"
 
-Scenario: Enter a palindrome
+Scenario: Enter a palindrome of all one case
 When I enter the string that is a palendrome
 And the string is all uppercase or lowercase
 And I choose the reverse function
 Then I should see the original string
+
+Scenario: Enter a palindrome of upper and lowercase
+When I enter the string "Racecar"
+And I choose the reverse function
+Then I should see the string "racecaR"
 
 Scenario: Enter an empty string
 When I enter an empty string
