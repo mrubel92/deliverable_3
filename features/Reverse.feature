@@ -27,3 +27,8 @@ Scenario: Enter a string of length 1
 Given the object's string is "I"
 When the object string is reversed
 Then "I" should be the new object string
+
+Scenario: Palindrome preserves proper letter case
+Given the object's string is "Racecar"
+When the object string is reversed
+Then "racecaR" should be the new object string
