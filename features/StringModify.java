@@ -20,7 +20,10 @@ public class StringModify
 		{
 			theString = "ERROR";
 		}
-		theString = theString.substring(0, length-chars);
+		else
+		{
+			theString = theString.substring(0, length-chars);
+		}
 	}
 	
 	public void add(String add)
